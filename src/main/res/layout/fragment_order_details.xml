@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Общая информация о клиенте и заказе -->
+        <TextView
+            style="@style/SectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Основные данные" />
+
+        <TextView
+            android:id="@+id/textViewClientName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Клиент: " />
+
+        <TextView
+            android:id="@+id/textViewOrderName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Название заказа: " />
+
+        <TextView
+            android:id="@+id/textViewDeliveryDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Срок сдачи: " />
+
+        <TextView
+            android:id="@+id/textViewWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Вес: "
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewTotalAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Цена: " />
+
+        <!-- Информация о составе заказа -->
+        <TextView
+            style="@style/SectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Состав заказа" />
+
+        <TextView
+            android:id="@+id/textViewDiscount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Скидка: " />
+
+        <TextView
+            android:id="@+id/textViewBiscuits"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Использованные бисквиты: " />
+
+        <TextView
+            android:id="@+id/textViewFillings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Использованные начинки: " />
+
+        <TextView
+            android:id="@+id/textViewCreams"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Использованные кремы: " />
+
+        <!-- Платформа связи -->
+        <TextView
+            style="@style/SectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Связь с клиентом" />
+
+        <TextView
+            android:id="@+id/textViewSocialNetwork"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Платформа связи: " />
+
+        <!-- Описание и примечание -->
+        <TextView
+            style="@style/SectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Дополнительная информация" />
+
+        <TextView
+            android:id="@+id/textViewDecorationDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Описание декора: " />
+
+        <TextView
+            android:id="@+id/textViewNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Примечание: " />
+
+        <!-- Статус заказа -->
+        <TextView
+            style="@style/SectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Статус заказа" />
+
+        <TextView
+            android:id="@+id/textViewStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Статус заказа: " />
+
+        <!-- Горизонтальные линии-разделители -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EFEFEF"
+            android:layout_marginVertical="16dp" />
+
+        <!-- Кнопки действий -->
+        <Button
+            android:id="@+id/buttonCompleteOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/green_button_color"
+            android:textColor="@color/white"
+            android:enabled="true"
+            android:text="Завершить заказ"/>
+
+        <Button
+            android:id="@+id/buttonCancelOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/yellow_button_color"
+            android:enabled="true"
+            android:text="Отменить заказ"/>
+
+        <Button
+            android:id="@+id/buttonEditOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/blue_button_color"
+            android:textColor="@color/white"
+            android:text="Редактировать заказ"/>
+
+        <Button
+            android:id="@+id/buttonDeleteOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/red_button_color"
+            android:textColor="@color/white"
+            android:text="Удалить заказ"/>
+
+    </LinearLayout>
+
+</ScrollView>

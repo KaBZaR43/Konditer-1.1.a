@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Макет отдельной строки истории заказов -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <!-- ФИО клиента -->
+    <TextView
+        android:id="@+id/customer_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:maxLines="1"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"/>
+
+    <!-- Название заказа -->
+    <TextView
+        android:id="@+id/order_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        android:textColor="#6A6A6A"
+        android:textSize="14sp"
+        android:layout_toEndOf="@+id/customer_name"
+        android:layout_marginStart="16dp"
+        android:layout_centerVertical="true"/>
+
+    <!-- Срок сдачи -->
+    <TextView
+        android:id="@+id/deadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="#9E9E9E"
+        android:textSize="12sp"
+        android:layout_below="@+id/customer_name"
+        android:layout_alignStart="@+id/customer_name"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Сумма заказа -->
+    <TextView
+        android:id="@+id/order_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="#9E9E9E"
+        android:textSize="12sp"
+        android:layout_below="@+id/order_title"
+        android:layout_toEndOf="@+id/deadline"
+        android:layout_marginStart="16dp"/>
+
+</RelativeLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textViewOrderName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Название заказа"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/client_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Клиент: ФИО Клиента"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewDeliveryDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Срок доставки: ДД.ММ.ГГГГ"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewTotalAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Цена: ₽XXX"
+            android:textSize="16sp" />
+
+        <!-- Добавляем текстовое поле для отображения статуса заказа -->
+        <TextView
+            android:id="@+id/textViewStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Статус: Ативный"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Поля ввода данных -->
+        <EditText
+            android:id="@+id/input_client_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/client_name"
+            android:inputType="textPersonName"
+            android:hint="@string/client_name"/>
+
+        <EditText
+            android:id="@+id/input_order_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/order_title"
+            android:inputType="text"
+            android:hint="@string/order_title"/>
+
+        <EditText
+            android:id="@+id/inputWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Вес (кг)"
+            android:inputType="numberDecimal"
+            android:maxLines="1" />
+
+        <EditText
+            android:id="@+id/editTextOrderPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/order_price"
+            android:inputType="numberDecimal"
+            android:hint="@string/order_price"/>
+
+        <EditText
+            android:id="@+id/input_discount_percentage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:autofillHints="@string/discount_percentage"
+            android:hint="@string/discount_percentage" />
+
+        <EditText
+            android:id="@+id/input_deadline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:autofillHints="@string/deadline"
+            android:hint="@string/deadline"/>
+
+        <EditText
+            android:id="@+id/input_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:autofillHints="@string/phone_number"
+            android:hint="@string/phone_number"/>
+
+        <!-- Платформа связи -->
+        <Spinner
+            android:id="@+id/spinner_platform"
+            android:layout_width="match_parent"
+            android:layout_height="34dp" />
+
+        <EditText
+            android:id="@+id/input_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/decoration_description"
+            android:inputType="text"
+            android:hint="@string/decoration_description"/>
+
+        <EditText
+            android:id="@+id/editTextNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/order_notes"
+            android:inputType="text"
+            android:hint="@string/order_notes"/>
+
+        <!-- Поле для ручного ввода бисквитов -->
+        <EditText
+            android:id="@+id/input_biscuits"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:hint="Введите список бисквитов через запятую"/>
+
+        <!-- Поле для ручного ввода начинки -->
+        <EditText
+            android:id="@+id/input_fillings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:hint="Введите список начинок через запятую"/>
+
+        <!-- Поле для ручного ввода кремов -->
+        <EditText
+            android:id="@+id/input_creams"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:hint="Введите список кремов через запятую"/>
+
+        <!-- Кнопка сохранения заказа -->
+        <Button
+            android:id="@+id/btn_save_order"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="@string/save_order" />
+
+    </LinearLayout>
+</ScrollView>

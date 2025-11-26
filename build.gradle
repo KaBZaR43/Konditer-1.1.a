@@ -1,0 +1,116 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    //id 'com.google.dagger.hilt.android' version '2.57.1'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '2.2.21' // Обновлено до стабильной версии
+    id 'kotlin-kapt'
+    alias(libs.plugins.kotlin.compose)
+}
+
+repositories {
+    mavenCentral()
+    google() // Репозиторий Google уже добавлен
+}
+
+android {
+    // Обновленный compileSdk для поддержки Android 14/15
+    compileSdk 36 // Используйте 35 (Android 14) или 36 (Android 15 preview)
+
+    defaultConfig {
+        applicationId "com.example.myapplication"
+        minSdk 28 // Увеличено для большей совместимости с новыми API
+        // Уменьшено targetSdk до 34 (Android 14) для избежания новых ограничений
+        // Можно увеличить до 35, если приложение готово к Android 15
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+        namespace 'com.example.konditer'
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // Обновленные настройки компиляции для Java 17
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    // Обновленные настройки Kotlin для Java 17
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    buildFeatures {
+        compose true
+        dataBinding true
+        // Убедитесь, что buildFeatures не дублируются
+    }
+
+    composeOptions {
+        // Обновленный компилятор Compose (проверьте актуальную версию)
+        kotlinCompilerExtensionVersion '1.5.15' // Обновлено до стабильной версии
+    }
+
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+    // Основные библиотеки
+    implementation libs.material
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.recyclerview
+    implementation libs.jakewharton.timber
+    implementation libs.androidx.fragment.ktx
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.cardview
+    implementation libs.gson
+
+    // Библиотеки жизненного цикла (проверьте актуальные версии)
+    implementation libs.androidx.lifecycle.runtime.ktx
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+
+    // Compose BOM (используйте стабильную версию)
+    implementation platform(libs.androidx.compose.bom)
+    implementation libs.ui
+    implementation libs.ui.graphics
+    implementation libs.ui.tooling.preview
+    implementation libs.material3
+    implementation libs.androidx.activity.compose
+
+    // Hilt
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
+
+    // Coroutines (проверьте актуальные версии)
+    implementation libs.kotlinx.coroutines.core
+    implementation libs.kotlinx.coroutines.android
+
+    // Тестирование
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+    androidTestImplementation platform(libs.androidx.compose.bom)
+    androidTestImplementation libs.ui.test.junit4
+    debugImplementation libs.ui.tooling
+    debugImplementation libs.ui.test.manifest
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}

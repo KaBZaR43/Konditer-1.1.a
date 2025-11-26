@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+        <!-- Базовая тема приложения -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+            <!-- Настройка статуса бара и прочего -->
+            <item name="colorPrimary">@color/colorPrimary</item>
+            <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+            <item name="colorAccent">@color/colorAccent</item>
+        </style>
+    <style name="FillingButtonStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:backgroundTint">#4CAF50</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:lineHeight">24sp</item>
+        <item name="android:shadowColor">#222222</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">4</item>
+        <item name="android:foregroundGravity">center_vertical|center_horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:enabled">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="BiscuitButtonStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:backgroundTint">#795548</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:lineHeight">24sp</item>
+        <item name="android:shadowColor">#222222</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">4</item>
+        <item name="android:foregroundGravity">center_vertical|center_horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:enabled">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="CreamButtonStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:backgroundTint">#03A9F4</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:lineHeight">24sp</item>
+        <item name="android:shadowColor">#222222</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">4</item>
+        <item name="android:foregroundGravity">center_vertical|center_horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:marqueeRepeatLimit">marquee_forever</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:enabled">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="SectionHeader">
+        <item name="android:textSize">18sp</item>          <!-- Размер шрифта -->
+        <item name="android:textStyle">bold</item>          <!-- Жирное начертание -->
+        <item name="android:textColor">#333333</item>      <!-- Тёмно-серый цвет текста -->
+    </style>
+</resources>

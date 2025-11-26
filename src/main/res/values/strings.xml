@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Konditer</string>
+    <string name="history">История заказов</string>
+    <string name="statistics">Статистика</string>
+    <string name="notifications">Уведомления</string>
+    <string name="no_orders_yet">Пока заказов нет</string>
+    <string name="sort_by_date">Сортировка по дате</string>
+    <string name="sort_by_price">Сортировка по цене</string>
+    <string name="sort_by_deadline">Сортировка по сроку сдачи</string>
+    <string name="sort_by_social_network">Сортировка по социальной сети</string>
+    <string name="client_fullname_label">ФИО Клиента:</string>
+    <string name="deadline_label">Срок сдачи:</string>
+    <string name="order_cost_label">Цена заказа:</string>
+    <string name="submit_order">Сдать заказ</string>
+    <string name="reject_order">Отказаться от заказа</string>
+    <string name="notif_title">Напоминание о заказе</string>
+    <string name="client_name">Имя клиента</string>
+    <string name="order_title">Название заказа</string>
+    <string name="order_price">Цена заказа</string>
+    <string name="discount_percentage">Процент скидки (%)</string>
+    <string name="deadline">Срок сдачи заказа</string>
+    <string name="phone_number">Телефон заказчика</string>
+    <string name="decoration_description">Описание декора</string>
+    <string name="order_notes">Примечание к заказу</string>
+    <string name="save_order">Сохранить заказ</string>
+    <string name="currency_symbol">₽</string>
+    <string name="open_drawer">Открыть меню</string>
+    <string name="close_drawer">Закрыть меню</string>
+    <string name="home_screen_title">Главный экран</string>
+</resources>

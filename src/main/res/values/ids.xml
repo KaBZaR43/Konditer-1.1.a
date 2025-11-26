@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="textViewClientFullName" type="id"/>
+    <item name="textViewPrice" type="id"/>
+    <item name="orders_listview" type="id"/>
+    <item name="firstLine" type="id"/>
+    <item name="secondLine" type="id"/>
+    <item name="client_name" type="id"/>
+    <item name="order_number" type="id"/>
+    <item name="relativeLayout" type="id" />
+    <item name="fragment_order_list" type="id"/>
+    <item name="fragment_history" type="id"/>
+    <item name="fragment_statistics" type="id"/>
+    <item name="content_frame" type="id"/>
+    <item name="fragment_container" type="id"/>
+    <item name="fab" type="id"/>
+    <item name="drawer_layout" type="id"/>
+    <item name="checkBoxHoneyBiscuit" type="id"/>
+</resources>
