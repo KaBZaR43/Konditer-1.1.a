@@ -34,6 +34,7 @@ import com.example.konditer.Notifications.NotificationStorageHelper;
 import com.example.konditer.fragments.HistoryFragment;
 import com.example.konditer.Notifications.NotificationsFragment;
 import com.example.konditer.fragments.OrdersListFragment;
+import com.example.konditer.fragments.SearchFragment;
 import com.example.konditer.fragments.StatisticsFragment;
 import com.example.konditer.models.OrderInfo;
 import com.google.android.material.navigation.NavigationView;
@@ -242,6 +243,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.menu_notifications) { // Уведомления
             displaySelectedScreen(R.id.menu_notifications);
         }
+        else if (id == R.id.action_search) { // Уведомления
+            displaySelectedScreen(R.id.action_search);
+        }
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
@@ -269,6 +273,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             transaction.add(R.id.fragment_container, new StatisticsFragment());
         } else if (screenId == R.id.menu_notifications) {// Экран уведомлений
             transaction.add(R.id.fragment_container, NotificationsFragment.newInstance(storageHelper));
+        }
+        else if (screenId == R.id.action_search) {/// Экран поиска
+            transaction.add(R.id.fragment_container, new SearchFragment());
         }
 
         // Завершаем транзакцию с commitAllowingStateLoss, чтобы предотвратить ошибки состояния Activity
