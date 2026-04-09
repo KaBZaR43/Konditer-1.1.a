@@ -1,10 +1,9 @@
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-    //id 'com.google.dagger.hilt.android' version '2.57.1'
-    id 'org.jetbrains.kotlin.plugin.serialization' version '2.2.21' // Обновлено до стабильной версии
-    id 'kotlin-kapt'
-    alias(libs.plugins.kotlin.compose)
+    id 'org.jetbrains.kotlin.android' version '2.2.21'  // Укажите версию
+    id 'org.jetbrains.kotlin.plugin.compose' version '2.2.21'  // Укажите версию
+    id 'org.jetbrains.kotlin.plugin.serialization' version '2.2.21'
+    id 'org.jetbrains.kotlin.kapt' version '2.2.21'
 }
 
 repositories {
@@ -39,6 +38,10 @@ android {
         }
     }
 
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.5.15'  // Укажите версию
+    }
+
     // Обновленные настройки компиляции для Java 17
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
@@ -56,10 +59,6 @@ android {
         // Убедитесь, что buildFeatures не дублируются
     }
 
-    composeOptions {
-        // Обновленный компилятор Compose (проверьте актуальную версию)
-        kotlinCompilerExtensionVersion '1.5.15' // Обновлено до стабильной версии
-    }
 
     packagingOptions {
         resources {
@@ -70,6 +69,7 @@ android {
 
 dependencies {
     // Основные библиотеки
+    implementation libs.androidx.security.crypto
     implementation libs.material
     implementation libs.androidx.core.ktx
     implementation libs.androidx.recyclerview
