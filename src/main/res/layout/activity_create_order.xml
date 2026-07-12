@@ -121,6 +121,15 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="@string/save_order" />
+        
+        <Button
+            android:id="@+id/btnExportBackup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📤 Экспортировать резервную копию"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:layout_margin="16dp" />
 
     </LinearLayout>
 </ScrollView>
