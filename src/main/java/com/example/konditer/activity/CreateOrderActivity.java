@@ -196,4 +196,65 @@ public class CreateOrderActivity extends AppCompatActivity {
     private List<String> convertCommaSeparatedToList(String commaSeparated) {
         return commaSeparated.isEmpty() ? new ArrayList<>() : Arrays.asList(commaSeparated.split("\\s*,\\s*"));
     }
+
+    /**
+ * Экспортирует orders.json в папку Downloads и предлагает поделиться файлом
+ */
+private void exportOrders() {
+    try {
+        // Источник — внутренний файл приложения
+        File sourceFile = new File(getFilesDir(), "orders.json");
+        
+        if (!sourceFile.exists()) {
+            Toast.makeText(this, "❌ Файл заказов не найден", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        // Копируем в папку Documents (доступна через файловый менеджер на Android 16)
+        File documentsDir = Environment.getExternalStoragePublicDirectory(
+            Environment.DIRECTORY_DOCUMENTS
+        );
+        if (!documentsDir.exists()) {
+            documentsDir.mkdirs();
+        }
+        
+        String backupName = "konditer_backup_" + 
+            new java.text.SimpleDateFormat("yyyy-MM-dd_HH-mm", 
+                java.util.Locale.getDefault()).format(new java.util.Date()) + 
+            ".json";
+        
+        File destFile = new File(documentsDir, backupName);
+        
+        // Копирование
+        java.nio.file.Files.copy(
+            sourceFile.toPath(),
+            destFile.toPath(),
+            java.nio.file.StandardCopyOption.REPLACE_EXISTING
+        );
+        
+        Log.i("Export", "✅ Файл скопирован: " + destFile.getAbsolutePath());
+        Log.i("Export", "📊 Размер: " + destFile.length() + " байт");
+
+        // Показываем диалог "Поделиться" — клиент отправит файл себе в Telegram
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("application/json");
+        shareIntent.putExtra(Intent.EXTRA_STREAM, 
+            androidx.core.content.FileProvider.getUriForFile(
+                this,
+                getPackageName() + ".fileprovider",
+                destFile
+            ));
+        shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        
+        startActivity(Intent.createChooser(shareIntent, "Отправить резервную копию"));
+        
+        Toast.makeText(this, 
+            "✅ Файл сохранён: " + backupName + "\nОтправьте его разработчику", 
+            Toast.LENGTH_LONG).show();
+            
+    } catch (Exception e) {
+        Log.e("Export", "❌ Ошибка экспорта", e);
+        Toast.makeText(this, "❌ Ошибка: " + e.getMessage(), Toast.LENGTH_LONG).show();
+    }
+}
 }
