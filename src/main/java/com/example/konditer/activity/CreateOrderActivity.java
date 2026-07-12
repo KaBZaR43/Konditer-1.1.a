@@ -34,6 +34,8 @@ public class CreateOrderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_order);
+        Button btnExport = findViewById(R.id.btnExportBackup);
+        btnExport.setOnClickListener(v -> exportOrders());
 
         // Привязка элементов UI
         inputClientName = findViewById(R.id.input_client_name);
