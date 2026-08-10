@@ -8,16 +8,20 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.konditer.R;
+import com.example.konditer.fragments.OrderDetailsFragment;
 import com.example.konditer.models.OrderInfo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
 
-    private final List<OrderInfo> mOrders;
+    private List<OrderInfo> mOrders;
     private final Context context;
     private OnItemClickListener clickListener;
     private OnLongItemClickListener longClickListener;
@@ -36,44 +40,27 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
 
     public OrderAdapter(Context context, List<OrderInfo> orders) {
         this.context = context;
-        this.mOrders = orders;
-        if (mOrders == null || mOrders.isEmpty()) {
-            Log.d("OrderAdapter", "Warning: Initialized with empty or null list");
+        this.mOrders = (orders != null) ? orders : new ArrayList<>();
+
+        if (mOrders.isEmpty()) {
+            Log.d("OrderAdapter", "Warning: Initialized with empty list");
         }
     }
 
     // Новый метод для обновления списка заказов
     public void updateOrders(List<OrderInfo> newOrders) {
         synchronized (this) {
-            this.mOrders.clear();
-            this.mOrders.addAll(newOrders);
+            if (mOrders == null) {
+                mOrders = new ArrayList<>();
+            }
+            mOrders.clear();
+            if (newOrders != null) {
+                mOrders.addAll(newOrders);
+            }
             notifyDataSetChanged();
             Log.d("OrderAdapter", "Updated with " + mOrders.size() + " orders");
         }
     }
-
-    // Метод для фильтрации активных заказов
-    /*public void filterActiveOrders() {
-        List<OrderInfo> activeOrders = new ArrayList<>();
-        for (OrderInfo order : mOrders) {
-            if (order.getStatus() == OrderStatus.Активный) {
-                activeOrders.add(order);
-            }
-        }
-        updateOrders(activeOrders);
-        Log.d("Filtering", "Filtered to " + activeOrders.size() + " active orders");
-    }
-
-    // Метод для фильтрации выполненных и отменённых заказов
-    /*public List<OrderInfo> getArchivedOrders() {
-        List<OrderInfo> archivedOrders = new ArrayList<>();
-        for (OrderInfo order : mOrders) {
-            if (order.getStatus() == OrderStatus.Выполнен || order.getStatus() == OrderStatus.Отменен) {
-                archivedOrders.add(order);
-            }
-        }
-        return archivedOrders;
-    }*/
 
     public List<OrderInfo> getCurrentList() {
         return mOrders;
@@ -94,11 +81,22 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
         OrderInfo order = mOrders.get(position);
         holder.bind(order);
+
+        // Добавляем обработчик клика на элемент
+        holder.itemView.setOnClickListener(v -> {
+            // Переходим к фрагменту с информацией о заказе
+            OrderDetailsFragment detailsFragment = OrderDetailsFragment.newInstance(order);
+            FragmentManager manager = ((AppCompatActivity)v.getContext()).getSupportFragmentManager();
+            manager.beginTransaction()
+                    .replace(R.id.fragment_container, detailsFragment)
+                    .addToBackStack(null)
+                    .commit();
+        });
     }
 
     @Override
     public int getItemCount() {
-        return mOrders.size();
+        return (mOrders != null) ? mOrders.size() : 0;
     }
 
     // Внутренний класс для удержания ViewHolder
